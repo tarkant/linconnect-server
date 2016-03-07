@@ -27,7 +27,7 @@ Installation
 
 Simply run linconnect_server.py to start the server, then start the Android application. The Android application will detect the server and display it in the server list. Selecting it will send a test notification to the server.
 
-**Simple Setup (tested on Ubuntu 13.10)**
+**Simple Setup**
 
 Enter the following command into a console to install the server, set it to autostart, and run LinConnect. The server will be automatically updated daily.
 
@@ -37,12 +37,36 @@ chmod +x install.sh; \
 ./install.sh
 ```
 
+If you recieve an error about pybonjour, you may have to install libavahi-compat-libdnssd1
+```bash
+apt-get install libavahi-compat-libdnssd1
+```
+Then download the latest pybonjour from Google Code :
+https://code.google.com/archive/p/pybonjour/downloads
+
+Unpack the downloaded file :
+```bash
+tar zxf pybonjour-1.1.1.tar.gz
+```
+Install the module
+```bash
+cd pybonjour-1.1.1
+sudo python setup.py install
+```
+
+And finally retry the setup.
+
 To remove LinConnect, delete the ~/.linconnect directory.
+
+**Tested with :**
+
+* Ubuntu 13.10
+* Ubuntu 15.10
         
 Client Download
 ---------------
 
-![alt text](https://developer.android.com/images/brand/en_app_rgb_wo_60.png "Google Play")
+![alt text](https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg "Google Play")
 
 A binary of the client may be downloaded from the Google Play Store.
 
